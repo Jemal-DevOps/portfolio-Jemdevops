@@ -1,0 +1,156 @@
+/* src/App.module.css */
+:root {
+  --bg: #0a0e1a;
+  --bg2: #111827;
+  --bg3: #1a2235;
+  --card: #141c2e;
+  --accent: #00d4ff;
+  --accent2: #7c3aed;
+  --green: #10b981;
+  --orange: #f59e0b;
+  --text: #e2e8f0;
+  --muted: #8892a4;
+  --border: #1e2d45;
+  --grad: linear-gradient(135deg, #00d4ff, #7c3aed);
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='light'] {
+  --bg: #f0f4ff;
+  --bg2: #e8edf8;
+  --bg3: #dce3f5;
+  --card: #ffffff;
+  --accent: #0066cc;
+  --accent2: #6d28d9;
+  --green: #059669;
+  --orange: #d97706;
+  --text: #1a2235;
+  --muted: #5a6a85;
+  --border: #c8d3e8;
+  --grad: linear-gradient(135deg, #0066cc, #6d28d9);
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.4s, color 0.4s;
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.sectionLine {
+  width: 50px;
+  height: 3px;
+  background: var(--grad);
+  border-radius: 2px;
+  margin-bottom: 3rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 6rem 2rem;
+}
+
+.fadeUp {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.fadeLeft {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.fadeRight {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.scaleIn {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.btnPrimary {
+  background: var(--grad);
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+}
+.btnPrimary:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.btnSecondary {
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--accent);
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+}
+.btnSecondary:hover {
+  background: rgba(0, 212, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 1.25rem;
+  }
+}

@@ -1,0 +1,26 @@
+.controls { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
+.runBtn { background: var(--gradient); color: white; border: none; padding: 8px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.runBtn:disabled { opacity: 0.7; cursor: wait; }
+.resetBtn { background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+.statusText { color: var(--text-muted); font-size: 0.9rem; margin-left: auto; }
+
+.pipeline { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 20px; margin-bottom: 24px; }
+.node { flex: 1; min-width: 140px; text-align: center; position: relative; }
+.node::after { content:''; position: absolute; top: 24px; left: 60%; width: 100%; height: 2px; background: var(--border); z-index: -1; }
+.node:last-child::after { display: none; }
+.node.done::after { background: var(--text-success); }
+
+.circle { width: 48px; height: 48px; border-radius: 50%; background: var(--bg-card); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 1.2rem; color: var(--text-muted); transition: all 0.3s; }
+.node.active .circle { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 15px rgba(0, 212, 255, 0.3); }
+.node.done .circle { background: var(--text-success); border-color: var(--text-success); color: white; }
+
+.node h4 { font-size: 0.9rem; margin-bottom: 4px; }
+.node p { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 8px; }
+.statusBadge { font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: var(--bg-card); color: var(--text-muted); text-transform: capitalize; }
+.node.active .statusBadge { background: rgba(0, 212, 255, 0.1); color: var(--primary); }
+.node.done .statusBadge { background: rgba(16, 185, 129, 0.1); color: var(--text-success); }
+
+.logTerm { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 16px; font-family: var(--font-mono); font-size: 0.85rem; height: 120px; overflow-y: auto; margin-bottom: 24px; }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 16px; }
+.metrics h3 { margin-bottom: 4px; }
+.metrics p { font-size: 0.8rem; }

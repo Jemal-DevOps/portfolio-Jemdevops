@@ -1,0 +1,123 @@
+/* Input Group Styling */
+.inputGroup { margin-bottom: 20px; }
+.inputGroup label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+}
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  background: var(--bg-main);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.15);
+}
+.inputGroup input:disabled,
+.inputGroup textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Social Links */
+.socials { display: flex; flex-direction: column; gap: 12px; }
+.social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 14px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+.social:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.social svg {
+  font-size: 1.3rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.social strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+.social .text-muted {
+  font-size: 0.8rem;
+}
+
+/* Status Messages */
+.successMsg, .errorMsg {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 12px 0;
+  animation: slideIn 0.3s ease;
+}
+.successMsg {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.errorMsg {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* Button Loading State */
+.loading {
+  opacity: 0.8;
+  cursor: wait;
+  position: relative;
+}
+.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 32px; }
+  .socials { flex-direction: row; flex-wrap: wrap; }
+  .social { flex: 1 1 45%; min-width: 200px; }
+}
