@@ -119,3 +119,41 @@ input:focus, textarea:focus { outline: none; border-color: var(--primary); }
   --anim-normal: 0.4s;
   --anim-slow: 0.8s;
 }
+
+:root {
+  /* ===== DARK THEME (Default) ===== */
+  --bg-main: #0a1128;
+  --bg-card: #111827;
+  --bg-card-hover: #1f2937;
+  --bg-elevated: #1e293b;
+  --bg-terminal: #0d1117;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-code: #38bdf8;
+  
+  --border: rgba(255, 255, 255, 0.08);
+  --primary: #00d4ff;
+  --secondary: #7c3aed;
+  --success: #10b981;
+  --gradient: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+}
+
+/* ===== LIGHT THEME ===== */
+[data-theme="light"] {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-elevated: #e2e8f0;
+  --bg-terminal: #f1f5f9;
+  
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-code: #0369a1;
+  
+  --border: rgba(0, 0, 0, 0.08);
+  --primary: #0066cc;
+  --secondary: #6d28d9;
+  --success: #059669;
+  --gradient: linear-gradient(135deg, #0066cc 0%, #6d28d9 100%);
+}

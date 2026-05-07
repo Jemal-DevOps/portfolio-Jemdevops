@@ -1,5 +1,5 @@
-// src/components/Navbar/Navbar.jsx
 import { useEffect, useState } from 'react';
+import { useTheme } from '../../hooks/useTheme';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
@@ -11,9 +11,9 @@ const NAV_LINKS = [
   { href: '#contact', label: 'Contact' },
 ];
 
-// ✅ Changed to named export for consistency
-export function Navbar({ theme, onToggleTheme }) {
+export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -35,16 +35,15 @@ export function Navbar({ theme, onToggleTheme }) {
         </ul>
 
         <div className={styles.right}>
-          <div className={styles.toggleRow}>
-            <span className={styles.toggleIcon}>🌙</span>
-            <button
-              className={styles.themeToggle}
-              onClick={onToggleTheme}
-              aria-label="Toggle theme"
-              data-light={theme === 'light'}
-            />
-            <span className={styles.toggleIcon}>☀️</span>
-          </div>
+          {/* Theme Toggle Button */}
+          <button
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
+          
           <a href="#contact" className={styles.hirBtn}>Hire Me</a>
         </div>
       </div>
