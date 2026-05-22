@@ -68,7 +68,7 @@ export const Contact = () => {
                 <FaGithub /> 
                 <div>
                   <strong>GitHub</strong><br/>
-                  <span className="text-muted">github.com/Jems-FinOps</span>
+                  <span className="text-muted">github.com/Jemal-DevOps</span>
                 </div>
               </a>
               
